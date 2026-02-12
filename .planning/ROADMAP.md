@@ -28,11 +28,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Data covers date range 2023-01-01 to 2025-12-31 for 20 US equity tickers
   3. Stooq data has been validated against reference source (no >10% deviations)
   4. SHA256 hash of instance.json is documented in README for integrity verification
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md — Download price data, fix deterministic JSON, validate, generate frozen instance.json
+- [ ] 01-02-PLAN.md — Create pytest validation suite and document SHA256 hash in README
 
 ### Phase 2: Automated Scoring
 **Goal**: Untrusted PR submissions are scored automatically using secure two-workflow pattern
@@ -90,7 +90,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Data Foundation | 0/2 | Not started | - |
+| 1. Data Foundation | 0/2 | Planned | - |
 | 2. Automated Scoring | 0/2 | Not started | - |
 | 3. PR Feedback | 0/1 | Not started | - |
 | 4. Public Leaderboard | 0/2 | Not started | - |
