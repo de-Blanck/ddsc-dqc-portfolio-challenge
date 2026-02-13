@@ -5,21 +5,21 @@
 See: .planning/PROJECT.md (updated 2026-02-12)
 
 **Core value:** A participant can go from cloning the repo to seeing their score on a leaderboard with zero human intervention.
-**Current focus:** Phase 1 - Data Foundation
+**Current focus:** Phase 1 - Data Foundation (COMPLETE)
 
 ## Current Position
 
-Phase: 1 of 4 (Data Foundation)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-02-13 — Completed 01-01-PLAN.md (Data Foundation)
+Phase: 1 of 4 (Data Foundation) -- COMPLETE
+Plan: 2 of 2 in current phase
+Status: Phase complete
+Last activity: 2026-02-13 -- Completed 01-02-PLAN.md (Validation tests + SHA256 hash)
 
-Progress: [█████░░░░░] 50%
+Progress: [██░░░░░] 29% (2/7 plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
+- Total plans completed: 2
 - Average duration: 4 min
 - Total execution time: 0.1 hours
 
@@ -27,11 +27,11 @@ Progress: [█████░░░░░] 50%
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-data-foundation | 1 | 4 min | 4 min |
+| 01-data-foundation | 2 | 8 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (4 min)
-- Trend: Starting execution phase
+- Last 5 plans: 01-01 (4 min), 01-02 (4 min)
+- Trend: Consistent 4 min/plan
 
 *Updated after each plan completion*
 
@@ -48,17 +48,21 @@ Recent decisions affecting current work:
 - Secure two-workflow pattern for CI (research flag: critical security requirement)
 - **[01-01]** Deterministic JSON with sort_keys=True and trailing newline for reproducible hashing
 - **[01-01]** Minimum 500 trading days per ticker threshold (exceeds plan's 200 minimum)
+- **[01-02]** LF-normalized SHA256 hash for cross-platform consistency (git stores LF internally)
+- **[01-02]** Hash: a3cbbd1d9e0125813e1026b39078ed8cc62ffb504238a476673cd7a58c0642dc (not the CRLF hash from Windows)
 
 ### Pending Todos
 
-None yet.
+None.
 
 ### Blockers/Concerns
 
 **[RESOLVED - 01-01]** Stooq data quality validated: All 20 tickers have 752 trading days (2023-01-03 to 2025-12-31), 751 aligned observations, no critical issues detected
 
+**[RESOLVED - 01-02]** Cross-platform line ending issue: instance.json CRLF on Windows vs LF on Linux produces different SHA256. Resolved by normalizing to LF in all hash comparisons and documenting LF-normalized hash.
+
 ## Session Continuity
 
-Last session: 2026-02-13 10:24 UTC
-Stopped at: Completed 01-01-PLAN.md (Data Foundation - instance.json generation)
+Last session: 2026-02-13 10:34 UTC
+Stopped at: Completed 01-02-PLAN.md (Validation tests + SHA256 hash documentation)
 Resume file: None
