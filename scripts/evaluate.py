@@ -127,7 +127,8 @@ def write_instance_json(inst: Instance, out_path: str) -> None:
     }
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(payload, f, indent=2)
+        json.dump(payload, f, indent=2, sort_keys=True, ensure_ascii=False)
+        f.write('\n')
 
 
 def main():
