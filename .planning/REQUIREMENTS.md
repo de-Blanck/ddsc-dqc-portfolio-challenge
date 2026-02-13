@@ -7,7 +7,7 @@
 
 ### Data
 
-- [ ] **DATA-01**: Instance.json committed to repo with pre-computed mu, Sigma, and parameters (N=20, K=5, lambda=0.5, A=10.0, date range 2023-01-01 to 2025-12-31)
+- [x] **DATA-01**: Instance.json committed to repo with pre-computed mu, Sigma, and parameters (N=20, K=5, lambda=0.5, A=10.0, date range 2023-01-01 to 2025-12-31)
 
 ### CI Scoring
 
@@ -51,7 +51,7 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DATA-01 | Phase 1 | Pending |
+| DATA-01 | Phase 1 | Done |
 | CISC-01 | Phase 2 | Pending |
 | CISC-02 | Phase 3 | Pending |
 | CISC-03 | Phase 2 | Pending |

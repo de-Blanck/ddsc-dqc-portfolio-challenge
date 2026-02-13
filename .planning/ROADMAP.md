@@ -12,7 +12,7 @@ This project establishes a zero-friction quantum challenge where participants cl
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Data Foundation** - Validated instance data committed to repo
+- [x] **Phase 1: Data Foundation** - Validated instance data committed to repo
 - [ ] **Phase 2: Automated Scoring** - Secure CI scores submissions automatically
 - [ ] **Phase 3: PR Feedback** - Scores posted as PR comments
 - [ ] **Phase 4: Public Leaderboard** - README leaderboard auto-updates
@@ -31,8 +31,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Download price data, fix deterministic JSON, validate, generate frozen instance.json
-- [ ] 01-02-PLAN.md — Create pytest validation suite and document SHA256 hash in README
+- [x] 01-01-PLAN.md — Download price data, fix deterministic JSON, validate, generate frozen instance.json
+- [x] 01-02-PLAN.md — Create pytest validation suite and document SHA256 hash in README
 
 ### Phase 2: Automated Scoring
 **Goal**: Untrusted PR submissions are scored automatically using secure two-workflow pattern
@@ -90,7 +90,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Data Foundation | 0/2 | Planned | - |
+| 1. Data Foundation | 2/2 | Complete | 2026-02-13 |
 | 2. Automated Scoring | 0/2 | Not started | - |
 | 3. PR Feedback | 0/1 | Not started | - |
 | 4. Public Leaderboard | 0/2 | Not started | - |
