@@ -151,7 +151,7 @@ def test_hash_integrity(instance):
     assert readme_path.exists(), f"README.md not found at {readme_path}"
 
     readme_text = readme_path.read_text()
-    match = re.search(r"[Ss][Hh][Aa]256.*?([a-f0-9]{64})", readme_text)
+    match = re.search(r"[Ss][Hh][Aa]256.*?([a-f0-9]{64})", readme_text, re.DOTALL)
     assert match, "No SHA256 hash found in README.md"
 
     expected_hash = match.group(1)

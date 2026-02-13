@@ -111,6 +111,29 @@ Each position corresponds to the ticker at the same index in `data/tickers.txt`.
 | lambda | 0.5 | Risk aversion |
 | A | 10.0 | Constraint penalty |
 
+### Instance Data
+
+The file `instance.json` is pre-committed in the repository root and contains the mean return vector (`mu`), covariance matrix (`sigma`), ticker list, and all QUBO parameters. This is the single source of truth for the challenge -- all submissions are scored against it.
+
+**SHA256 checksum (LF-normalized):**
+
+```
+a3cbbd1d9e0125813e1026b39078ed8cc62ffb504238a476673cd7a58c0642dc
+```
+
+Verify your copy is unmodified:
+
+```bash
+# Linux / macOS
+shasum -a 256 instance.json
+
+# Windows (PowerShell)
+(Get-FileHash instance.json -Algorithm SHA256).Hash.ToLower()
+
+# Python (cross-platform, normalizes line endings)
+python -c "import hashlib, pathlib; print(hashlib.sha256(pathlib.Path('instance.json').read_bytes().replace(b'\r\n', b'\n')).hexdigest())"
+```
+
 ---
 
 ## Getting Started
@@ -130,7 +153,9 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Download price data
+### 2. Download price data (Optional)
+
+> **Note:** `instance.json` is already committed in the repo. You only need to download price data if you want to regenerate it yourself or explore the raw data.
 
 ```bash
 python scripts/download_stooq.py
@@ -138,7 +163,9 @@ python scripts/download_stooq.py
 
 This downloads daily CSVs from [Stooq](https://stooq.com) (free, no API key) into `data/prices/`. Takes about 10 seconds.
 
-### 3. Generate the challenge instance
+### 3. Generate the challenge instance (Optional)
+
+> **Note:** Skip this step -- `instance.json` is already committed with the frozen challenge data. Only run this if you downloaded price data in step 2 and want to verify the instance generation.
 
 ```bash
 python scripts/evaluate.py --K 5 --lambda_ 0.5 --penalty_A 10.0 --start 2023-01-01 --end 2025-12-31
@@ -210,14 +237,16 @@ ddsc-dqc-portfolio-challenge/
   README.md               # This file
   LICENSE                  # MIT
   requirements.txt         # Python dependencies
+  instance.json            # Frozen QUBO instance (mu, Sigma, parameters)
   data/
     tickers.txt            # 20 ticker symbols
     prices/                # Downloaded CSVs (not committed)
-    instance.json          # Generated QUBO instance
   scripts/
     download_stooq.py      # Fetch price data from Stooq
     evaluate.py            # Build instance + score submissions
     baseline_sa.py         # Simulated annealing baseline
+  tests/
+    test_instance.py       # Validation tests for instance.json
   submissions/
     example_submission.json
 ```
