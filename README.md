@@ -261,6 +261,12 @@ Historical prices are downloaded from [Stooq](https://stooq.com), a free financi
 
 ---
 
+## Tools
+
+This project's planning and spec-driven development workflow uses [/GSD (Get Shit Done)](https://github.com/gsd-build/get-shit-done) — a lightweight meta-prompting and context engineering system for Claude Code by TÂCHES.
+
+---
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
